@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }
 
@@ -13,38 +13,71 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.yellow,
+        backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
-            // mainAxisSize: MainAxisSize.min,
-            verticalDirection: VerticalDirection.down,
-            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.greenAccent,
-                child: Text('Container 1'), // Container can have only one child
+              const CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage('images/rawnak.jpg'),
+              ),
+              const Text(
+                'Rawnak Chourasia',
+                style: TextStyle(
+                    fontFamily: 'Pacifico',
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              Text(
+                'FRONT END DEVELOPER',
+                style: TextStyle(
+                    fontFamily: 'Source Sans Pro',
+                    color: Colors.teal.shade100,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2.5),
               ),
               SizedBox(
-                height: 10,
+                width: 150.0,
+                height: 20.0,
+                child: Divider(color: Colors.teal.shade100),
               ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.blue,
-                child: Text('Container 2'),
-              ),
-              Container(
-                width: 300,
-                height: 100,
-                color: Colors.red,
-                child: Text('Container 3'),
-              ),
-              Container(
-                width: double.infinity,
-              )
+              Card(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.call,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      '+91 766 712 1985',
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.teal.shade900,
+                          fontFamily: 'Source Sans Pro'),
+                    ),
+                  )),
+              Card(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.alternate_email,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      'rnkchr0@gmail.com',
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.teal.shade900,
+                          fontFamily: 'Source Sans Pro'),
+                    ),
+                  ))
             ],
           ),
         ),
